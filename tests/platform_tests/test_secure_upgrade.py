@@ -71,7 +71,7 @@ def test_non_secure_boot_upgrade_failure(duthost, non_secure_image_path, tbinfo)
         err_msg = str(err.results._check_key("msg"))
         logger.info("Expected fail, err msg is : {}\n\noutput_msg is {}".format(err_msg, output_msg))
         pytest_assert(
-            "Failure: CMS signature verification failed" in str(output_msg),
+            "Failure: CMS signature Verification Failed" in str(err_msg),
             "failure was not due to security limitations")
     finally:
         pytest_assert(result == "image install failure", "non-secure image was successfully installed")
